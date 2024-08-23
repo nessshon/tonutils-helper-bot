@@ -1,14 +1,12 @@
-import asyncio
 import re
 from pathlib import Path
-from pprint import pprint
 from typing import List, Tuple
 
 import aiofiles
 
 
 class ContentManager:
-    BASE_DIR = Path(__file__).resolve().parent.parent.parent / "tonutils"
+    BASE_DIR = Path(__file__).resolve().parent.parent / "tonutils"
 
     @classmethod
     async def read_file(cls, relative_path: str) -> str:
@@ -81,11 +79,3 @@ class ContentManager:
             for section, operation, link in items
             if query.lower() in operation.lower() or query.lower() in section.lower()
         ]
-
-
-async def main():
-    pprint(await ContentManager.get_categories())
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
