@@ -28,7 +28,7 @@ class ContentManager:
     @classmethod
     async def _extract_guide_section(cls) -> str:
         """Extract the Guide section from the README file."""
-        return await cls._extract_section('### Guide', '## Donations')
+        return await cls._extract_section('### Guide', '## Contribution')
 
     @classmethod
     async def _parse_categories(cls, data: str) -> List[Tuple[str, str, str]]:
